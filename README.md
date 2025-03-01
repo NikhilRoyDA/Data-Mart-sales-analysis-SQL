@@ -3,28 +3,54 @@
 ## 📌 Project Overview  
 This project analyzes **Data Mart’s sales performance** to measure the impact of **sustainable packaging changes** introduced in June 2020. Using **SQL**, I transformed raw sales data into actionable insights, focusing on sales trends across **regions, platforms, and customer demographics**.  
 
-## 📊 Key Highlights  
-- 🛠 **Tech Used:** SQL (CTEs, Window Functions, Aggregations)  
-- 🏪 **Data:** 340M+ transactions from 3 years  
-- 📈 **Analysis:** Retail vs. Shopify performance, customer demographics, revenue trends  
+## 🛠 Tech Stack Used  
+- **SQL:** CTEs, Window Functions, Aggregations, Joins  
+- **Database:** PostgreSQL / MySQL  
+- **BI Tools (Optional):** Tableau / Power BI (For Visualization)  
+- **GitHub:** Version control & project documentation  
 
-## 🔍 Insights Discovered  
-- **Retail outperformed Shopify** in monthly sales.  
-- **Retirees and Families** were the biggest spenders in Retail.  
-- **Seasonal trends** affected sales volume.  
+---
 
-## 📁 Repository Structure  
--- Identifying missing weeks in the dataset
-WITH week_series AS (
-    SELECT generate_series(
-        (SELECT MIN(week_date) FROM clean_weekly_sales),
-        (SELECT MAX(week_date) FROM clean_weekly_sales),
-        INTERVAL '1 week'
-    ) AS week_date
-)
-SELECT week_date
-FROM week_series
-LEFT JOIN clean_weekly_sales USING (week_date)
-WHERE clean_weekly_sales.week_date IS NULL;
+## 📂 Dataset Information  
+- **Total Transactions:** ~340M  
+- **Time Frame:** 3 years (Before & After June 2020)  
+- **Key Data Points:**  
+  - `week_date`: Sales date in weekly format  
+  - `region`: Sales distribution across different geographical areas  
+  - `platform`: Comparison between **Retail & Shopify**  
+  - `customer_type`: **Retirees, Families, Young Adults, etc.**  
+  - `sales_amount`: Total revenue generated  
+
+---
+
+## 🔍 Key Analysis & Insights  
+
+### 📌 **1. Data Cleaning & Transformation**  
+- Standardized the **date format** to weekly (`week_date`).  
+- Created a structured **clean_weekly_sales** table.  
+- Segmented customers into **age groups & demographics**.  
+- Filled missing values and handled anomalies.  
+- Derived **new columns**: `week_number`, `month_number`, `age_band`, `demographic`.  
+
+---
+
+### 📌 **2. Exploratory Data Analysis (EDA)**  
+- Identified **missing weeks** in the dataset using sequence generation.  
+- Analyzed **total yearly transactions** (~340M).  
+- Compared **Retail vs. Shopify sales contribution** per month.  
+- **Discovered key trends** in sales across regions & customer segments.  
+
+📌 **Insights Discovered:**  
+✔️ **Retail consistently outperformed Shopify** in monthly sales.  
+✔️ **Retirees & Families** contributed the most to Retail sales.  
+✔️ **Sales dips** during off-seasons & peaks during holidays.  
+
+---
+
+### 📌 **3. Advanced SQL Techniques Used**  
+✔️ **CTEs (Common Table Expressions)** – Used for structured queries.  
+✔️ **Window Functions** – For running totals & trend analysis.  
+✔️ **CASE Statements** – To create conditional categories for segmentation.  
+
 
 
