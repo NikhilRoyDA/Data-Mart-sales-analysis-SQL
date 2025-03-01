@@ -11,7 +11,7 @@ This project analyzes **Data Mart’s sales performance** to measure the impact 
 
 ---
 
-## 📂 Dataset Information  
+## 📂 Dataset Information - [Schema](https://github.com/NikhilRoyDA/Data-Mart-sales-analysis-SQL/tree/main/Schema)
 - **Total Transactions:** ~340M  
 - **Time Frame:** 3 years (Before & After June 2020)  
 - **Key Data Points:**  
