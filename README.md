@@ -23,7 +23,7 @@ This project analyzes **Data Mart’s sales performance** to measure the impact 
 
 ---
 
-## 🔍 Key Analysis & Insights - <a heref"https://github.com/NikhilRoyDA/Data-Mart-sales-analysis-SQL/blob/main/Assignment%20%26%20Insights/Insights%20%20-%20DATA%20MART%20Analysis.pdf"<Insights>a
+## 🔍 Key Analysis & Insights - <a href="https://github.com/NikhilRoyDA/Data-Mart-sales-analysis-SQL/blob/main/Assignment%20%26%20Insights/Insights%20%20-%20DATA%20MART%20Analysis.pdf">Insights</a>
 
 ### 📌 **1. Data Cleaning & Transformation**  
 - Standardized the **date format** to weekly (`week_date`).  
